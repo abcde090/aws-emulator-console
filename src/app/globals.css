@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+/* AWS Management Console (Cloudscape Visual Refresh) theme tokens. */
+@theme {
+  --color-nav: #000716;
+  --color-nav-hover: #161e2d;
+  --color-nav-text: #f2f3f3;
+  --color-ink: #16191f;
+  --color-muted: #545b64;
+  --color-line: #d5dbdb;
+  --color-line-soft: #eaeded;
+  --color-page: #f2f3f3;
+  --color-surface: #ffffff;
+  --color-shade: #fafafa;
+  --color-link: #0972d3;
+  --color-link-hover: #033160;
+  --color-primary: #0972d3;
+  --color-primary-hover: #033160;
+  --color-accent: #0972d3;
+  --color-accent-hover: #033160;
+  --color-ok: #1d8102;
+  --color-bad: #d13212;
+  --color-warn: #b06500;
+  --color-info-bg: #f2f8fd;
+  --color-info-line: #0972d3;
+  --color-bad-bg: #fdf3f1;
+  --color-ok-bg: #f2f8f0;
+  --color-warn-bg: #fff9e6;
+  --font-sans: "Amazon Ember", "Helvetica Neue", Roboto, Arial, sans-serif;
+  --font-mono: Monaco, Menlo, Consolas, "Courier Prime", monospace;
+}
+
+/* Cloudscape Dark Mode tokens */
+[data-theme="dark"] {
+  --color-ink: #d1d5db;
+  --color-muted: #9ba7b6;
+  --color-line: #414d5c;
+  --color-line-soft: #2a3441;
+  --color-page: #0f1b2a;
+  --color-surface: #16191f;
+  --color-shade: #192534;
+  --color-link: #539fe5;
+  --color-link-hover: #89bdee;
+  --color-primary: #539fe5;
+  --color-primary-hover: #89bdee;
+  --color-accent: #539fe5;
+  --color-accent-hover: #89bdee;
+  --color-ok: #29ad32;
+  --color-bad: #ff7a70;
+  --color-warn: #f89256;
+  --color-info-bg: #12293b;
+  --color-info-line: #539fe5;
+  --color-bad-bg: #2a1414;
+  --color-ok-bg: #122616;
+  --color-warn-bg: #2b2110;
+  color-scheme: dark;
+}
+
+[data-theme="dark"] .bg-white {
+  background-color: var(--color-surface);
+}
+
+[data-theme="dark"] .hover\:bg-\[\#f2f8fd\]:hover,
+[data-theme="dark"] .bg-\[\#f2f8fd\] {
+  background-color: #162a3e;
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+  border-color: #414d5c;
+  background-color: #0f141a;
+  color: #e9ebed;
+}
+
+@layer base {
+  html,
+  body {
+    background: var(--color-page);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a {
+    color: var(--color-link);
+  }
+  a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+/* AWS Cloudscape Visual Refresh card: crisp stroke with subtle elevation */
+.awsui-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 28, 36, 0.08);
+}
+
+/* Subtle Cloudscape scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted);
+}
